@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Profile Page</title>
+  <style>
+    :root {
+      /* 🔧 CHỈNH MÀU KHUNG (độ trong suốt ở đây) */
+      --card-bg: rgba(10, 10, 10, 0.55); /* tăng số cuối (0.55 → 0.8) = đậm hơn */
+      --card-border: rgba(255, 255, 255, 0.12);
+      --text-main: #ffffff;
+      --text-sub: #d0d0d0;
+      --accent: #7289da;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+
+      /* 🔒 KHÓA SCROLL (không cho kéo lên/xuống) */
+      overflow: hidden;
+
+      height: 100vh;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      color: var(--text-main);
+
+      /* 🖼️ BACKGROUND MẶC ĐỊNH (bạn có thể đổi link ảnh tại đây) */
+      background-image: url("https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1600&auto=format&fit=crop");
+
+      /* 🔧 CHỈNH CÁCH HIỂN THỊ BACKGROUND */
+      background-size: cover;       /* cover = full màn */
+      background-position: center;  /* căn giữa */
+      background-repeat: no-repeat;
+      position: relative;
+    }
+
+    /* lớp phủ tối nhẹ cho dễ nhìn chữ */
+    body::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.25); /* 🔧 chỉnh độ tối ở đây */
+      z-index: 0;
+    }
+
+    .profile-container {
+      position: relative;
+      z-index: 1;
+      width: min(90vw, 520px);
+      padding: 32px;
+      border-radius: 24px;
+
+      /* 🧊 HIỆU ỨNG KÍNH MỜ */
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      backdrop-filter: blur(16px); /* 🔧 tăng blur = mờ hơn */
+      -webkit-backdrop-filter: blur(16px);
+
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+      text-align: center;
+    }
+
+    .bg-upload {
+      margin-bottom: 18px;
+    }
+
+    .bg-upload label {
+      display: inline-block;
+      padding: 10px 14px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .bg-upload input {
+      display: none;
+    }
+
+    .profile-img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid rgba(255, 255, 255, 0.15);
+      margin-bottom: 18px;
+      transition: 0.3s;
+    }
+
+    .profile-img:hover {
+      border-color: var(--accent);
+      transform: scale(1.05);
+    }
+
+    .profile-name {
+      font-size: 28px;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+
+    .profile-info {
+      color: var(--text-sub);
+      margin-bottom: 12px;
+      line-height: 1.5;
+    }
+
+    .social-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .social-links a {
+      text-decoration: none;
+      color: #fff;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      transition: 0.3s;
+    }
+
+    .social-links a:hover {
+      transform: translateY(-2px);
+      background: rgba(114, 137, 218, 0.22);
+    }
+  </style>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+  <div class="profile-container">
+
+    <!-- 📂 UPLOAD BACKGROUND TỪ MÁY -->
+    <div class="bg-upload">
+      <label for="bgInput">Chọn ảnh nền</label>
+      <input type="file" id="bgInput" accept="image/*">
+    </div>
+
+    <img src="https://avatars.githubusercontent.com/u/88751712?s=400" class="profile-img">
+
+    <h2 class="profile-name">ZEanth</h2>
+    <p class="profile-info">Bùi Nguyễn Tấn Sang · Quang Nam</p>
+
+    <div class="social-links">
+      <a href="https://discord.com/users/208150597508136961"><i class="fab fa-discord"></i>Discord</a>
+      <a href="https://github.com/HenryNetworkk"><i class="fab fa-github"></i>GitHub</a>
+      <a href="https://profile.hackthebox.com/profile/019d398f-e678-7229-9468-a992214c5177"><i class="fab fa-hackthebox"></i>Hack The Box</a>
+      <a href="https://tryhackme.com/p/HenryNetWork"><i class="fab fa-tryhackme"></i>Try Hack Me</a>
+      <a href="https://t.me/kingvon008"><i class="fab fa-telegram"></i>Telegram</a>
+      <a href="https://www.tiktok.com/@champagnehaki"><i class="fab fa-tiktok"></i>Tiktok</a>
+      <a href="https://leetcode.com/HenryNetworkk"><i class="fab fa-leetcode"></i>Leetcode</a>
+      
+    </div>
+  </div>
+
+  <script>
+    const bgInput = document.getElementById("bgInput");
+
+    // 🖼️ THAY BACKGROUND BẰNG ẢNH TỪ MÁY
+    bgInput.addEventListener("change", function () {
+      const file = this.files[0];
+      if (!file) return;
+
+      const url = URL.createObjectURL(file);
+      document.body.style.backgroundImage = `url('${url}')`;
+    });
+
+    // 🔒 CHẶN SCROLL BẰNG JS (backup nếu CSS bị override)
+    window.addEventListener("scroll", () => {
+      window.scrollTo(0, 0);
+    });
+  </script>
+</body>
+</html>
