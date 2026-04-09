@@ -47,15 +47,21 @@
       z-index: 0;
     }
 
-.profile-container {
-  position: relative;
-  z-index: 1;
-  width: max-content;   /* 🔥 cho phép giãn theo nội dung */
-  max-width: 90vw;      /* ❗ vẫn giữ không vượt màn hình */
-  padding: 32px;
-  border-radius: 24px;
-  ...
-}
+    .profile-container {
+      position: relative;
+      z-index: 1;
+      width: min(90vw, 800px); /* 🔥 tăng max width để chứa nhiều link hơn */
+      padding: 32px;
+      border-radius: 24px;
+
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+      text-align: center;
+    }
 
     .profile-img {
       width: 120px;
@@ -84,14 +90,16 @@
     }
 
     /* 🔥 FIX: KHÔNG XUỐNG DÒNG, SCROLL NGANG */
-.social-links {
-  display: flex;
-  flex-wrap: nowrap;
-  width: max-content;   /* 🔥 chiều ngang = số link */
-  gap: 12px;
-  margin: 18px auto 0;
-  padding-bottom: 5px;
-}
+    .social-links {
+      display: flex;
+      flex-wrap: nowrap; /* ❗ không cho xuống dòng */
+      overflow-x: auto;  /* 👉 scroll ngang */
+      gap: 12px;
+      margin-top: 18px;
+      padding-bottom: 5px;
+      justify-content: center;
+    }
+
     /* ẩn thanh scroll cho đẹp */
     .social-links::-webkit-scrollbar {
       height: 6px;
@@ -135,8 +143,6 @@
     <div class="social-links">
       <a href="https://discord.com/users/208150597508136961"><i class="fab fa-discord"></i></a>
       <a href="https://github.com/HenryNetworkk"><i class="fab fa-github"></i></a>
-      <a href="https://profile.hackthebox.com/profile/019d398f-e678-7229-9468-a992214c5177"><i class="fab fa-hackthebox"></i></a>
-      <a href="https://tryhackme.com/p/HenryNetWork"><i class="fab fa-tryhackme"></i></a>
       <a href="https://t.me/kingvon008"><i class="fab fa-telegram"></i></a>
       <a href="https://www.tiktok.com/@champagnehaki"><i class="fab fa-tiktok"></i></a>
       <a href="https://leetcode.com/HenryNetworkk"><i class="fab fa-leetcode"></i></a>
