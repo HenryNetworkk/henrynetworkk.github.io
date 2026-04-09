@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Profile Page</title>
+
+  <style>
+    :root {
+      --card-bg: rgba(10, 10, 10, 0.55);
+      --card-border: rgba(255, 255, 255, 0.12);
+      --text-main: #ffffff;
+      --text-sub: #d0d0d0;
+      --accent: #7289da;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      overflow: hidden; /* 🔒 khóa scroll dọc */
+
+      height: 100vh;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      color: var(--text-main);
+
+      /* 🖼️ 👉 CHỈNH BACKGROUND TẠI ĐÂY */
+      background-image: url("YOUR_IMAGE_HERE.jpg");
+
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      position: relative;
+    }
+
+    body::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.25);
+      z-index: 0;
+    }
+
+    .profile-container {
+      position: relative;
+      z-index: 1;
+      width: min(90vw, 800px); /* 🔥 tăng max width để chứa nhiều link hơn */
+      padding: 32px;
+      border-radius: 24px;
+
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+      text-align: center;
+    }
+
+    .profile-img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid rgba(255, 255, 255, 0.15);
+      margin-bottom: 18px;
+      transition: 0.3s;
+    }
+
+    .profile-img:hover {
+      border-color: var(--accent);
+      transform: scale(1.05);
+    }
+
+    .profile-name {
+      font-size: 28px;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+
+    .profile-info {
+      color: var(--text-sub);
+      margin-bottom: 12px;
+    }
+
+    /* 🔥 FIX: KHÔNG XUỐNG DÒNG, SCROLL NGANG */
+    .social-links {
+      display: flex;
+      flex-wrap: nowrap; /* ❗ không cho xuống dòng */
+      overflow-x: auto;  /* 👉 scroll ngang */
+      gap: 12px;
+      margin-top: 18px;
+      padding-bottom: 5px;
+    }
+
+    /* ẩn thanh scroll cho đẹp */
+    .social-links::-webkit-scrollbar {
+      height: 6px;
+    }
+
+    .social-links::-webkit-scrollbar-thumb {
+      background: rgba(255,255,255,0.2);
+      border-radius: 10px;
+    }
+
+    .social-links a {
+      flex: 0 0 auto; /* ❗ giữ nguyên kích thước */
+      text-decoration: none;
+      color: #fff;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      transition: 0.3s;
+    }
+
+    .social-links a:hover {
+      transform: translateY(-2px);
+      background: rgba(114, 137, 218, 0.22);
+    }
+  </style>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+  <div class="profile-container">
+
+    <img src="https://avatars.githubusercontent.com/u/88751712?s=400" class="profile-img">
+
+    <h2 class="profile-name">𝗛𝗲𝗻𝗿𝘆𝗡𝗲𝘁𝘄𝗼𝗿𝗸 | 𝟭𝟬𝟬万请求</h2>
+
+    <div class="social-links">
+      <a href="https://discord.com/users/208150597508136961"><i class="fab fa-discord"></i></a>
+      <a href="https://github.com/HenryNetworkk"><i class="fab fa-github"></i></a>
+      <a href="https://profile.hackthebox.com/profile/019d398f-e678-7229-9468-a992214c5177"><i class="fab fa-hackthebox"></i></a>
+      <a href="https://tryhackme.com/p/HenryNetWork"><i class="fab fa-tryhackme"></i></a>
+      <a href="https://t.me/kingvon008"><i class="fab fa-telegram"></i></a>
+      <a href="https://www.tiktok.com/@champagnehaki"><i class="fab fa-tiktok"></i></a>
+      <a href="https://leetcode.com/HenryNetworkk"><i class="fab fa-leetcode"></i></a>
+    </div>
+
+  </div>
+
+  <script>
+    // 🔒 backup chặn scroll dọc
+    window.addEventListener("scroll", () => {
+      window.scrollTo(0, 0);
+    });
+  </script>
+</body>
+</html>
