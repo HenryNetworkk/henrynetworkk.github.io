@@ -4,10 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Profile Page</title>
+
   <style>
     :root {
-      /* 🔧 CHỈNH MÀU KHUNG (độ trong suốt ở đây) */
-      --card-bg: rgba(10, 10, 10, 0.55); /* tăng số cuối (0.55 → 0.8) = đậm hơn */
+      --card-bg: rgba(10, 10, 10, 0.55);
       --card-border: rgba(255, 255, 255, 0.12);
       --text-main: #ffffff;
       --text-sub: #d0d0d0;
@@ -20,9 +20,7 @@
 
     body {
       margin: 0;
-
-      /* 🔒 KHÓA SCROLL (không cho kéo lên/xuống) */
-      overflow: hidden;
+      overflow: hidden; /* 🔒 khóa scroll dọc */
 
       height: 100vh;
       font-family: Arial, sans-serif;
@@ -32,58 +30,37 @@
       padding: 20px;
       color: var(--text-main);
 
-      /* 🖼️ BACKGROUND MẶC ĐỊNH (bạn có thể đổi link ảnh tại đây) */
-      background-image: url("https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1600&auto=format&fit=crop");
+      /* 🖼️ 👉 CHỈNH BACKGROUND TẠI ĐÂY */
+      background-image: url("https://github.com/user-attachments/assets/1db8db2f-6e55-45e5-9d2c-d006095e5403");
 
-      /* 🔧 CHỈNH CÁCH HIỂN THỊ BACKGROUND */
-      background-size: cover;       /* cover = full màn */
-      background-position: center;  /* căn giữa */
+      background-size: cover;
+      background-position: center;
       background-repeat: no-repeat;
       position: relative;
     }
 
-    /* lớp phủ tối nhẹ cho dễ nhìn chữ */
     body::before {
       content: "";
       position: absolute;
       inset: 0;
-      background: rgba(0, 0, 0, 0.25); /* 🔧 chỉnh độ tối ở đây */
+      background: rgba(0, 0, 0, 0.25);
       z-index: 0;
     }
 
     .profile-container {
       position: relative;
       z-index: 1;
-      width: min(90vw, 520px);
+      width: min(90vw, 800px); /* 🔥 tăng max width để chứa nhiều link hơn */
       padding: 32px;
       border-radius: 24px;
 
-      /* 🧊 HIỆU ỨNG KÍNH MỜ */
       background: var(--card-bg);
       border: 1px solid var(--card-border);
-      backdrop-filter: blur(16px); /* 🔧 tăng blur = mờ hơn */
+      backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
 
       box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
       text-align: center;
-    }
-
-    .bg-upload {
-      margin-bottom: 18px;
-    }
-
-    .bg-upload label {
-      display: inline-block;
-      padding: 10px 14px;
-      border-radius: 12px;
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      cursor: pointer;
-      font-size: 14px;
-    }
-
-    .bg-upload input {
-      display: none;
     }
 
     .profile-img {
@@ -110,18 +87,30 @@
     .profile-info {
       color: var(--text-sub);
       margin-bottom: 12px;
-      line-height: 1.5;
     }
 
+    /* 🔥 FIX: KHÔNG XUỐNG DÒNG, SCROLL NGANG */
     .social-links {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
+      flex-wrap: nowrap; /* ❗ không cho xuống dòng */
+      overflow-x: auto;  /* 👉 scroll ngang */
       gap: 12px;
       margin-top: 18px;
+      padding-bottom: 5px;
+    }
+
+    /* ẩn thanh scroll cho đẹp */
+    .social-links::-webkit-scrollbar {
+      height: 6px;
+    }
+
+    .social-links::-webkit-scrollbar-thumb {
+      background: rgba(255,255,255,0.2);
+      border-radius: 10px;
     }
 
     .social-links a {
+      flex: 0 0 auto; /* ❗ giữ nguyên kích thước */
       text-decoration: none;
       color: #fff;
       display: inline-flex;
@@ -146,42 +135,24 @@
 <body>
   <div class="profile-container">
 
-    <!-- 📂 UPLOAD BACKGROUND TỪ MÁY -->
-    <div class="bg-upload">
-      <label for="bgInput">Chọn ảnh nền</label>
-      <input type="file" id="bgInput" accept="image/*">
-    </div>
-
     <img src="https://avatars.githubusercontent.com/u/88751712?s=400" class="profile-img">
 
-    <h2 class="profile-name">ZEanth</h2>
-    <p class="profile-info">Bùi Nguyễn Tấn Sang · Quang Nam</p>
+    <h2 class="profile-name">𝗛𝗲𝗻𝗿𝘆𝗡𝗲𝘁𝘄𝗼𝗿𝗸 𝟭𝟬𝟬 万请求 | 100</h2>
 
     <div class="social-links">
-      <a href="https://discord.com/users/208150597508136961"><i class="fab fa-discord"></i>Discord</a>
-      <a href="https://github.com/HenryNetworkk"><i class="fab fa-github"></i>GitHub</a>
-      <a href="https://profile.hackthebox.com/profile/019d398f-e678-7229-9468-a992214c5177"><i class="fab fa-hackthebox"></i>Hack The Box</a>
-      <a href="https://tryhackme.com/p/HenryNetWork"><i class="fab fa-tryhackme"></i>Try Hack Me</a>
-      <a href="https://t.me/kingvon008"><i class="fab fa-telegram"></i>Telegram</a>
-      <a href="https://www.tiktok.com/@champagnehaki"><i class="fab fa-tiktok"></i>Tiktok</a>
-      <a href="https://leetcode.com/HenryNetworkk"><i class="fab fa-leetcode"></i>Leetcode</a>
-      
+      <a href="https://discord.com/users/208150597508136961"><i class="fab fa-discord"></i></a>
+      <a href="https://github.com/HenryNetworkk"><i class="fab fa-github"></i></a>
+      <a href="https://profile.hackthebox.com/profile/..."><i class="fab fa-hackthebox"></i></a>
+      <a href="https://tryhackme.com/p/HenryNetWork"><i class="fab fa-tryhackme"></i></a>
+      <a href="https://t.me/kingvon008"><i class="fab fa-telegram"></i></a>
+      <a href="https://www.tiktok.com/@champagnehaki"><i class="fab fa-tiktok"></i></a>
+      <a href="https://leetcode.com/HenryNetworkk"><i class="fab fa-code"></i></a>
     </div>
+
   </div>
 
   <script>
-    const bgInput = document.getElementById("bgInput");
-
-    // 🖼️ THAY BACKGROUND BẰNG ẢNH TỪ MÁY
-    bgInput.addEventListener("change", function () {
-      const file = this.files[0];
-      if (!file) return;
-
-      const url = URL.createObjectURL(file);
-      document.body.style.backgroundImage = `url('${url}')`;
-    });
-
-    // 🔒 CHẶN SCROLL BẰNG JS (backup nếu CSS bị override)
+    // 🔒 backup chặn scroll dọc
     window.addEventListener("scroll", () => {
       window.scrollTo(0, 0);
     });
