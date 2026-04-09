@@ -31,7 +31,7 @@
       color: var(--text-main);
 
       /* 🖼️ 👉 CHỈNH BACKGROUND TẠI ĐÂY */
-      background-image: url("YOUR_IMAGE_HERE.jpg");
+      background-image: url("https://raw.githubusercontent.com/HenryNetworkk/henrynetworkk.github.io/main/bg.jpg");
 
       background-size: cover;
       background-position: center;
@@ -47,21 +47,16 @@
       z-index: 0;
     }
 
-    .profile-container {
-      position: relative;
-      z-index: 1;
-      width: min(90vw, 800px); /* 🔥 tăng max width để chứa nhiều link hơn */
-      padding: 32px;
-      border-radius: 24px;
+     .profile-container {
+  position: relative;
+  z-index: 1;
+  width: max-content;   /* 🔥 cho phép giãn theo nội dung */
+  max-width: 90vw;      /* ❗ vẫn giữ không vượt màn hình */
+  padding: 32px;
+  border-radius: 24px;
+  ...
+ }
 
-      background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
-      text-align: center;
-    }
 
     .profile-img {
       width: 120px;
@@ -89,15 +84,14 @@
       margin-bottom: 12px;
     }
 
-    /* 🔥 FIX: KHÔNG XUỐNG DÒNG, SCROLL NGANG */
-    .social-links {
-      display: flex;
-      flex-wrap: nowrap; /* ❗ không cho xuống dòng */
-      overflow-x: auto;  /* 👉 scroll ngang */
-      gap: 12px;
-      margin-top: 18px;
-      padding-bottom: 5px;
-    }
+ .social-links {
+  display: flex;
+  flex-wrap: nowrap;
+  width: max-content;   /* 🔥 chiều ngang = số link */
+  gap: 12px;
+  margin: 18px auto 0;
+  padding-bottom: 5px;
+}
 
     /* ẩn thanh scroll cho đẹp */
     .social-links::-webkit-scrollbar {
