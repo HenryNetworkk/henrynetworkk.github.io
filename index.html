@@ -31,7 +31,7 @@
       color: var(--text-main);
 
       /* 🖼️ 👉 CHỈNH BACKGROUND TẠI ĐÂY */
-      background-image: url("https://github.com/user-attachments/assets/1db8db2f-6e55-45e5-9d2c-d006095e5403");
+      background-image: url("https://raw.githubusercontent.com/HenryNetworkk/henrynetworkk.github.io/main/path/to/bg.jpg");
 
       background-size: cover;
       background-position: center;
@@ -47,21 +47,15 @@
       z-index: 0;
     }
 
-    .profile-container {
-      position: relative;
-      z-index: 1;
-      width: min(90vw, 800px); /* 🔥 tăng max width để chứa nhiều link hơn */
-      padding: 32px;
-      border-radius: 24px;
-
-      background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
-      text-align: center;
-    }
+.profile-container {
+  position: relative;
+  z-index: 1;
+  width: max-content;   /* 🔥 cho phép giãn theo nội dung */
+  max-width: 90vw;      /* ❗ vẫn giữ không vượt màn hình */
+  padding: 32px;
+  border-radius: 24px;
+  ...
+}
 
     .profile-img {
       width: 120px;
@@ -90,15 +84,14 @@
     }
 
     /* 🔥 FIX: KHÔNG XUỐNG DÒNG, SCROLL NGANG */
-    .social-links {
-      display: flex;
-      flex-wrap: nowrap; /* ❗ không cho xuống dòng */
-      overflow-x: auto;  /* 👉 scroll ngang */
-      gap: 12px;
-      margin-top: 18px;
-      padding-bottom: 5px;
-    }
-
+.social-links {
+  display: flex;
+  flex-wrap: nowrap;
+  width: max-content;   /* 🔥 chiều ngang = số link */
+  gap: 12px;
+  margin: 18px auto 0;
+  padding-bottom: 5px;
+}
     /* ẩn thanh scroll cho đẹp */
     .social-links::-webkit-scrollbar {
       height: 6px;
@@ -137,16 +130,16 @@
 
     <img src="https://avatars.githubusercontent.com/u/88751712?s=400" class="profile-img">
 
-    <h2 class="profile-name">𝗛𝗲𝗻𝗿𝘆𝗡𝗲𝘁𝘄𝗼𝗿𝗸 𝟭𝟬𝟬 万请求 | 100</h2>
+    <h2 class="profile-name">𝗛𝗲𝗻𝗿𝘆𝗡𝗲𝘁𝘄𝗼𝗿𝗸 | 𝟭𝟬𝟬万请求</h2>
 
     <div class="social-links">
       <a href="https://discord.com/users/208150597508136961"><i class="fab fa-discord"></i></a>
       <a href="https://github.com/HenryNetworkk"><i class="fab fa-github"></i></a>
-      <a href="https://profile.hackthebox.com/profile/..."><i class="fab fa-hackthebox"></i></a>
+      <a href="https://profile.hackthebox.com/profile/019d398f-e678-7229-9468-a992214c5177"><i class="fab fa-hackthebox"></i></a>
       <a href="https://tryhackme.com/p/HenryNetWork"><i class="fab fa-tryhackme"></i></a>
       <a href="https://t.me/kingvon008"><i class="fab fa-telegram"></i></a>
       <a href="https://www.tiktok.com/@champagnehaki"><i class="fab fa-tiktok"></i></a>
-      <a href="https://leetcode.com/HenryNetworkk"><i class="fab fa-code"></i></a>
+      <a href="https://leetcode.com/HenryNetworkk"><i class="fab fa-leetcode"></i></a>
     </div>
 
   </div>
