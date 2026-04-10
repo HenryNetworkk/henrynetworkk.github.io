@@ -7,7 +7,7 @@
 
   <style>
     :root {
-      --card-bg: rgba(10, 10, 10, 0.55);
+      --card-bg: rgba(255, 255, 255, 0.08);
       --card-border: rgba(255, 255, 255, 0.12);
       --text-main: #ffffff;
       --text-sub: #d0d0d0;
@@ -48,20 +48,24 @@
     }
 
     .profile-container {
-      position: relative;
-      z-index: 1;
-      width: min(90vw, 800px); /* 🔥 tăng max width để chứa nhiều link hơn */
-      padding: 32px;
-      border-radius: 24px;
+  position: relative;
+  z-index: 1;
 
-      background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
+  width: fit-content;
+  max-width: calc(100vw - 40px);
+  min-width: 320px;
 
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
-      text-align: center;
-    }
+  padding: 40px 48px; /* CHỈNH SIZE THẺ GIỮA TẠI ĐÂY */
+  border-radius: 24px;
+
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(16px);
+
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+  text-align: center;
+}
 
     .profile-img {
       width: 120px;
@@ -75,7 +79,7 @@
 
     .profile-img:hover {
       border-color: var(--accent);
-      transform: scale(1.05);
+      transform: scale(1.2);
     }
 
     .profile-name {
@@ -89,20 +93,25 @@
       margin-bottom: 12px;
     }
 
-    /* 🔥 FIX: KHÔNG XUỐNG DÒNG, SCROLL NGANG */
+   
     .social-links {
-      display: flex;
-      flex-wrap: nowrap; /* ❗ không cho xuống dòng */
-      overflow-x: auto;  /* 👉 scroll ngang */
-      gap: 12px;
-      margin-top: 18px;
-      padding-bottom: 5px;
-      justify-content: center;
-    }
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+
+  margin-top: 18px;
+  padding-bottom: 5px;
+
+  width: max-content;
+  margin-left: auto;
+  margin-right: auto;
+}
 
     /* ẩn thanh scroll cho đẹp */
     .social-links::-webkit-scrollbar {
-      height: 6px;
+      height: 9px;
     }
 
     .social-links::-webkit-scrollbar-thumb {
@@ -117,7 +126,7 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 10px 14px;
+      padding: 15px 21px;
       border-radius: 999px;
       background: rgba(255, 255, 255, 0.08);
       border: 1px solid rgba(255, 255, 255, 0.12);
@@ -136,16 +145,18 @@
 <body>
   <div class="profile-container">
 
-    <img src="https://avatars.githubusercontent.com/u/88751712?s=400" class="profile-img">
+    <img src="https://avatars.githubusercontent.com/u/2894976?v=4" class="profile-img">
 
     <h2 class="profile-name">𝗛𝗲𝗻𝗿𝘆𝗡𝗲𝘁𝘄𝗼𝗿𝗸 | 𝟭𝟬𝟬万请求</h2>
 
     <div class="social-links">
-      <a href="https://discord.com/users/208150597508136961"><i class="fab fa-discord"></i></a>
-      <a href="https://github.com/HenryNetworkk"><i class="fab fa-github"></i></a>
-      <a href="https://t.me/kingvon008"><i class="fab fa-telegram"></i></a>
-      <a href="https://www.tiktok.com/@champagnehaki"><i class="fab fa-tiktok"></i></a>
-      <a href="https://leetcode.com/HenryNetworkk"><i class="fab fa-leetcode"></i></a>
+      <a href="https://discord.com/users/208150597508136961"><iconify-icon icon="simple-icons:discord"></iconify-icon></a>
+      <a href="https://github.com/HenryNetworkk"><iconify-icon icon="simple-icons:github"></iconify-icon></a>
+      <a href="https://t.me/kingvon008"><iconify-icon icon="simple-icons:telegram"></iconify-icon></a>
+      <a href="https://www.tiktok.com/@champagnehaki"><iconify-icon icon="simple-icons:tiktok"></iconify-icon></a>
+      <a href="https://leetcode.com/u/HenryNetworkk/"><iconify-icon icon="simple-icons:leetcode"></iconify-icon></a>
+      <a href="https://tryhackme.com/p/HenryNetWork"><iconify-icon icon="simple-icons:tryhackme"></iconify-icon></a>
+      <a href="https://profile.hackthebox.com/profile/019d398f-e678-7229-9468-a992214c5177"><iconify-icon icon="simple-icons:hackthebox"></iconify-icon></a>
     </div>
 
   </div>
