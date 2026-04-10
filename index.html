@@ -20,8 +20,7 @@
 
     body {
       margin: 0;
-      overflow: hidden; /* 🔒 khóa scroll dọc */
-
+      overflow: hidden;
       height: 100vh;
       font-family: Arial, sans-serif;
       display: flex;
@@ -29,10 +28,7 @@
       align-items: center;
       padding: 20px;
       color: var(--text-main);
-
-      /* 🖼️ 👉 CHỈNH BACKGROUND TẠI ĐÂY */
       background-image: url("https://raw.githubusercontent.com/HenryNetworkk/henrynetworkk.github.io/main/bg.jpg");
-
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -48,24 +44,20 @@
     }
 
     .profile-container {
-  position: relative;
-  z-index: 1;
-
-  width: fit-content;
-  max-width: calc(100vw - 40px);
-  min-width: 320px;
-
-  padding: 40px 48px; /* CHỈNH SIZE THẺ GIỮA TẠI ĐÂY */
-  border-radius: 24px;
-
-  background: var(--card-bg);
-  border: 1px solid var(--card-border);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(16px);
-
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
-  text-align: center;
-}
+      position: relative;
+      z-index: 1;
+      width: fit-content;
+      max-width: calc(100vw - 40px);
+      min-width: 320px;
+      padding: 40px 48px;
+      border-radius: 24px;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+      text-align: center;
+    }
 
     .profile-img {
       width: 120px;
@@ -93,38 +85,35 @@
       margin-bottom: 12px;
     }
 
-   
     .social-links {
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: center;
-  align-items: center;
-  gap: 12px;
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      margin-top: 18px;
+      padding-bottom: 5px;
+      width: max-content;
+      margin-left: auto;
+      margin-right: auto;
+    }
 
-  margin-top: 18px;
-  padding-bottom: 5px;
-
-  width: max-content;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-    /* ẩn thanh scroll cho đẹp */
     .social-links::-webkit-scrollbar {
       height: 9px;
     }
 
     .social-links::-webkit-scrollbar-thumb {
-      background: rgba(255,255,255,0.2);
+      background: rgba(255, 255, 255, 0.2);
       border-radius: 10px;
     }
 
     .social-links a {
-      flex: 0 0 auto; /* ❗ giữ nguyên kích thước */
+      flex: 0 0 auto;
       text-decoration: none;
       color: #fff;
       display: inline-flex;
       align-items: center;
+      justify-content: center;
       gap: 8px;
       padding: 15px 21px;
       border-radius: 999px;
@@ -137,32 +126,54 @@
       transform: translateY(-2px);
       background: rgba(114, 137, 218, 0.22);
     }
+
+    iconify-icon {
+      color: #fff;
+      font-size: 18px;
+      width: 1em;
+      height: 1em;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
   </style>
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
 </head>
 
 <body>
   <div class="profile-container">
-
-    <img src="https://avatars.githubusercontent.com/u/2894976?v=4" class="profile-img">
+    <img src="https://avatars.githubusercontent.com/u/2894976?v=4" class="profile-img" alt="Profile avatar">
 
     <h2 class="profile-name">𝗛𝗲𝗻𝗿𝘆𝗡𝗲𝘁𝘄𝗼𝗿𝗸 | 𝟭𝟬𝟬万请求</h2>
 
     <div class="social-links">
-      <a href="https://discord.com/users/208150597508136961"><i class="fab fa-discord"></i></a>
-      <a href="https://github.com/HenryNetworkk"><i class="fab fa-github"></i></a>
-      <a href="https://t.me/kingvon008"><i class="fab fa-telegram"></i></a>
-      <a href="https://www.tiktok.com/@champagnehaki"><i class="fab fa-tiktok"></i></a>
-      <a href="https://leetcode.com/u/HenryNetworkk/"><iconify-icon icon="simple-icons:leetcode"></iconify-icon></a>
-      <a href="https://tryhackme.com/p/HenryNetWork"><iconify-icon icon="simple-icons:tryhackme"></iconify-icon></a>
-      <a href="https://profile.hackthebox.com/profile/019d398f-e678-7229-9468-a992214c5177"><iconify-icon icon="simple-icons:hackthebox"></iconify-icon></a>
+      <a href="https://discord.com/users/208150597508136961" target="_blank" rel="noopener noreferrer">
+        <iconify-icon icon="simple-icons:discord"></iconify-icon>
+      </a>
+      <a href="https://github.com/HenryNetworkk" target="_blank" rel="noopener noreferrer">
+        <iconify-icon icon="simple-icons:github"></iconify-icon>
+      </a>
+      <a href="https://t.me/kingvon008" target="_blank" rel="noopener noreferrer">
+        <iconify-icon icon="simple-icons:telegram"></iconify-icon>
+      </a>
+      <a href="https://www.tiktok.com/@champagnehaki" target="_blank" rel="noopener noreferrer">
+        <iconify-icon icon="simple-icons:tiktok"></iconify-icon>
+      </a>
+      <a href="https://leetcode.com/u/HenryNetworkk/" target="_blank" rel="noopener noreferrer">
+        <iconify-icon icon="simple-icons:leetcode"></iconify-icon>
+      </a>
+      <a href="https://tryhackme.com/p/HenryNetWork" target="_blank" rel="noopener noreferrer">
+        <iconify-icon icon="simple-icons:tryhackme"></iconify-icon>
+      </a>
+      <a href="https://profile.hackthebox.com/profile/019d398f-e678-7229-9468-a992214c5177" target="_blank" rel="noopener noreferrer">
+        <iconify-icon icon="simple-icons:hackthebox"></iconify-icon>
+      </a>
     </div>
-
   </div>
 
   <script>
-    // 🔒 backup chặn scroll dọc
     window.addEventListener("scroll", () => {
       window.scrollTo(0, 0);
     });
