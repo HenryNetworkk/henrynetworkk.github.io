@@ -43,6 +43,24 @@
       z-index: 0;
     }
 
+    .avatar-wrapper {
+     width: 220px;
+     height: 220px;
+
+     margin: 0 auto;
+
+     border-radius: 50%;
+
+     background: rgba(255,255,255,0.08);
+
+     backdrop-filter: blur(20px);
+     -webkit-backdrop-filter: blur(20px);
+
+     display: flex;
+     justify-content: center;
+     align-items: center;
+    }
+
     .profile-container {
       position: relative;
       z-index: 1;
@@ -145,7 +163,7 @@
 </head>
 
 <body>
-  <div class="profile-container">
+  <div class="avatar-wrapper">
     <img src="https://avatars.githubusercontent.com/u/2894976?v=4" class="profile-img" alt="Profile avatar">
 
     <h2 class="profile-name">𝗛𝗲𝗻𝗿𝘆𝗡𝗲𝘁𝘄𝗼𝗿𝗸 | 𝟭𝟬𝟬万请求</h2>
